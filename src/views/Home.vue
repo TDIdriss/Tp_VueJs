@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <p v-if="visible">Maintenant vous me voyez {{message}} </p>
+    <button v-on:click="foo()"> OK </button>
+    <div v-background>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+    <div v-background="green">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import {Background} from '../directives/Background.directive';
+import TodosComponent from '@/components/todos.vue'
 
 @Component({
   components: {
-    HelloWorld,
+    TodosComponent
   },
+  directives:{
+    Background
+  }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  visible = true;
+  message = "Andy"
+  foo(){
+      this.visible = !this.visible;
+    }
+
+}
 </script>
