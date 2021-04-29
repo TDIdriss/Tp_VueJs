@@ -4,7 +4,7 @@
     <button v-on:click="foo()"> OK </button>
     <div v-background>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
     <div v-background="green">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-
+<div> <todos-component/></div>
   </div>
 </template>
 
