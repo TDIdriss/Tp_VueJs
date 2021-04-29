@@ -85,6 +85,16 @@
      
       created(){
         this.$root.$on("supp", this.removetache)
+        this.$root.$on("edit", this.edittache)
+      }
+
+      edittache(newtache,tache){
+        console.log(newtache);
+        console.log(tache);
+        console.log(this.listtache.indexOf(tache));
+      
+          this.listtache.splice(this.listtache.indexOf(tache),1,newtache)
+          console.log(this.listtache);
       }
 
       removetache(tache){
